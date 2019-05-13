@@ -233,7 +233,7 @@ public class EdgeDeployBuilder extends BaseBuilder {
                 }
             }
 
-            String scriptToDeploy = "az iot edge deployment create --config-id " + deploymentId + " --hub-name " + iothubName + " --content " + deploymentJsonPath + " --target-condition \"" + condition + "\" --priority " + priority + "";
+            String scriptToDeploy = "az iot edge deployment create --config-id " + deploymentId + " --hub-name " + iothubName + " --content \"" + deploymentJsonPath + "\" --target-condition \"" + condition + "\" --priority " + priority + "";
             executer.executeAZ(scriptToDeploy, true);
 
             // delete generated deployment.json
